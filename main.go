@@ -42,7 +42,7 @@ func init() {
 		cache.Set(v[i].Title, v[i])
 	}
 	update <- true
-	OA = NewOAGithub("8ba2991113e68b4805c1", "b551e8a640d53904d82f95ae0d84915ba4dc0571", "user")
+	OA = NewOAGithub("8ba2991113e68b4805c1", "b551e8a640d53904d82f95ae0d84915ba4dc0571", "user", "http://bookmark.daoapp.io/callback")
 }
 func init() {
 }
