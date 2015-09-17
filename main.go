@@ -25,6 +25,7 @@ type Bookmark struct {
 
 var (
 	t      *template.Template
+	hacker *template.Template
 	v      []*Bookmark
 	update chan bool
 	cache  *lfu2.LFUCache
@@ -33,6 +34,7 @@ var (
 
 func init() {
 	update = make(chan bool, 10)
+	hacker, _ = template.New("hacker.html").ParseFiles("hacker.html")
 	t, _ = template.New("bookmark.html").ParseFiles("bookmark.html")
 	// b := readFile("bookmark.md")
 	b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
@@ -51,6 +53,7 @@ func main() {
 	go updateBookmarks(time.Second)
 	go flushBookmarks(time.Hour * 24 * 30)
 	http.HandleFunc("/", bookmark)
+	http.HandleFunc("/hacker", hackerHandler)
 	http.HandleFunc("/lfu", lfu)
 	http.HandleFunc("/signin", signin)
 	http.HandleFunc("/callback", callback)
@@ -110,6 +113,11 @@ func updateBookmarks(d time.Duration) {
 func bookmark(rw http.ResponseWriter, req *http.Request) {
 	fmt.Printf("%s  ", req.RemoteAddr)
 	t.Execute(rw, v)
+}
+
+func hackerHandler(rw http.ResponseWriter, req *http.Request) {
+	fmt.Printf("%s  ", req.RemoteAddr)
+	hacker.Execute(rw, nil)
 }
 
 func lfu(rw http.ResponseWriter, req *http.Request) {
