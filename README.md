@@ -4,15 +4,11 @@ Least frequently use bookmarks
 
 [BOOKMARK](http://bookmark.daoapp.io/)
 
-##	LIB
+##	Bookmarks
 
 [LFU](https://github.com/shaalx/leetcode)
 
-[OAUTH](https://github.com/everfore/oauth)
-
-##  BOOKMARK
-
-[GOOJ](http://goojle.daoapp.io)
+[GoOJ](http://goojle.daoapp.io)
 
 ##	LICENSE
 
