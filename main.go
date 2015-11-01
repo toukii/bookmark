@@ -137,9 +137,12 @@ func signin(rw http.ResponseWriter, req *http.Request) {
 func updateMD(rw http.ResponseWriter, req *http.Request) {
 	b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
 	v = unmarshal(b)
-	cache = lfu2.NewLFUCache(len(v))
 	for i := len(v) - 1; i >= 0; i-- {
+		cur := cache.Get(v[i].Title)
 		cache.Set(v[i].Title, v[i])
+		if cur != nil {
+			v[i].N = cur.N - 2
+		}
 	}
 	update <- true
 	http.Redirect(rw, req, "/", 302)
