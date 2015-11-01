@@ -51,6 +51,7 @@ func main() {
 	go updateBookmarks(time.Second)
 	go flushBookmarks(time.Hour * 24 * 30)
 	http.HandleFunc("/", bookmark)
+	http.HandleFunc("/update", updateMD)
 	http.HandleFunc("/hacker", hackerHandler)
 	http.HandleFunc("/lfu", lfu)
 	http.HandleFunc("/signin", signin)
@@ -131,6 +132,17 @@ func lfu(rw http.ResponseWriter, req *http.Request) {
 
 func signin(rw http.ResponseWriter, req *http.Request) {
 	http.Redirect(rw, req, OA.AuthURL(), 302)
+}
+
+func updateMD(rw http.ResponseWriter, req *http.Request) {
+	b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
+	v = unmarshal(b)
+	cache = lfu2.NewLFUCache(len(v))
+	for i := len(v) - 1; i >= 0; i-- {
+		cache.Set(v[i].Title, v[i])
+	}
+	update <- true
+	http.Redirect(rw, req, "/", 302)
 }
 
 func callback(rw http.ResponseWriter, req *http.Request) {
