@@ -139,10 +139,8 @@ func updateMD(rw http.ResponseWriter, req *http.Request) {
 	v = unmarshal(b)
 	for i := len(v) - 1; i >= 0; i-- {
 		cur := cache.Get(v[i].Title)
+		cur.N -= 2
 		cache.Set(v[i].Title, v[i])
-		if cur != nil {
-			v[i].N = cur.N - 2
-		}
 	}
 	update <- true
 	http.Redirect(rw, req, "/", 302)
