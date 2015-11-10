@@ -138,9 +138,10 @@ func updateMD(rw http.ResponseWriter, req *http.Request) {
 	b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
 	v = unmarshal(b)
 	for i := len(v) - 1; i >= 0; i-- {
-		cur := cache.Get(v[i].Title)
-		cur.N -= 2
-		cache.Set(v[i].Title, v[i])
+		// cur := cache.Attach(v[i].Title)
+		// cur.N -= 1
+		// cache.Set(v[i].Title, v[i])
+		cache.WhistPut(v[i].Title, v[i])
 	}
 	update <- true
 	http.Redirect(rw, req, "/", 302)
