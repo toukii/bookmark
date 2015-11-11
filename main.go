@@ -27,6 +27,7 @@ var (
 	t      *template.Template
 	hacker *template.Template
 	v      []*Bookmark
+	rmv    []*Bookmark
 	update chan bool
 	cache  *lfu2.LFUCache
 	OA     *OAGithub
@@ -39,7 +40,7 @@ func init() {
 	// b := readFile("bookmark.md")
 	b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
 	v = unmarshal(b)
-	cache = lfu2.NewLFUCache(len(v))
+	cache = lfu2.NewLFUCache(len(v) / 2)
 	for i := len(v) - 1; i >= 0; i-- {
 		cache.Set(v[i].Title, v[i])
 	}
@@ -99,19 +100,33 @@ func updateBookmarks(d time.Duration) {
 		<-update
 		<-ticker.C
 		vals := cache.Vals()
+		rmvals := cache.RmVals()
 		ret := make([]*Bookmark, len(vals))
+		retrm := make([]*Bookmark, len(rmvals))
 		for i, it := range vals {
 			bok := it.V.(*Bookmark)
 			bok.N = it.N
 			ret[i] = bok
 		}
+		for i, it := range rmvals {
+			bok := it.V.(*Bookmark)
+			bok.N = it.N
+			retrm[i] = bok
+		}
 		v = ret
+		rmv = retrm
 	}
 }
 
 func bookmark(rw http.ResponseWriter, req *http.Request) {
 	fmt.Printf("%s  ", req.RemoteAddr)
-	t.Execute(rw, v)
+	// t.Execute(rw, v)
+	data := make(map[string]interface{})
+	data["size"] = len(v)
+	data["rmsize"] = len(rmv)
+	data["v"] = v
+	data["rmv"] = rmv
+	t.Execute(rw, data)
 }
 
 func hackerHandler(rw http.ResponseWriter, req *http.Request) {

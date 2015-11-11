@@ -214,11 +214,11 @@ var qqgroup = '1316011195';
     <!-- <div class="bc-social"></div> -->
       <div class="projects-header page-header">
         <h4>LFU Bookmarks</h4>
-        <p>Least frequently used bookmarks</p>
+        <p>Least frequently used bookmarks. size:{{.size}}</p>
       </div>
 
       <div class="row">
-      {{range .}}
+      {{range .v}}
             <div class="col-sm-6 col-md-1 col-lg-3">
             <div class="thumbnail">
               <a href="{{.Site}}" title="{{.Title}}" target="_blank" onclick="lfu({{.Title}})">
@@ -235,13 +235,31 @@ var qqgroup = '1316011195';
             </div>
           </div>
       {{end}}
+      </div>
 
+      <div class="projects-header page-header">
+        <p>Outside of cache(unsorted). size:{{.rmsize}}</p>
+      </div>
+      <div class="row">
+      {{range .rmv}}
+            <div class="col-sm-6 col-md-1 col-lg-3">
+            <div class="thumbnail">
+              <a href="{{.Site}}" title="{{.Title}}" target="_blank" onclick="lfu({{.Title}})">
+                <img class="img-rounded lazy" src="{{.Bgpic}}" width="250px" height="5px" data-src="{{.Bgpic}}" alt="Headroom.js">
+              </a>
+              <div class="caption">
+                <h3> 
+                  <a href="{{.Site}}" title="{{.Title}}" target="_blank" onclick="lfu({{.Title}})">{{.Title}}<br><small>{{.N}}@{{.Official}}</small></a>
+                </h3>
+                <p>
+                <h4>{{.Remark}}</h4>
+                </p>
+              </div>
+            </div>
+          </div>
+      {{end}}
+      </div>
 
-
-
-
-
-</div>
 </div><!-- /.container -->
     <div class="bc-social">
     <div class="container">
