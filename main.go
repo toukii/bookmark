@@ -57,6 +57,8 @@ func main() {
 	http.HandleFunc("/lfu", lfu)
 	http.HandleFunc("/signin", signin)
 	http.HandleFunc("/callback", callback)
+	http.HandleFunc("/up", up)
+	http.HandleFunc("/down", down)
 	http.ListenAndServe(":80", nil)
 }
 
@@ -147,6 +149,17 @@ func lfu(rw http.ResponseWriter, req *http.Request) {
 
 func signin(rw http.ResponseWriter, req *http.Request) {
 	http.Redirect(rw, req, OA.AuthURL(), 302)
+}
+
+func up(rw http.ResponseWriter, req *http.Request) {
+	cache.Insize(1)
+	updateMD(rw, req)
+}
+
+func down(rw http.ResponseWriter, req *http.Request) {
+	cache.Desize(1)
+	update <- true
+	http.Redirect(rw, req, "/", 302)
 }
 
 func updateMD(rw http.ResponseWriter, req *http.Request) {
