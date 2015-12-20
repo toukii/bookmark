@@ -36,7 +36,7 @@
 {
 	"title":"GoOJ",
 	"official":"goojle",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/golang.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/fish.png",
 	"site":"http://goojle.daoapp.io/",
 	"remark":"Golang Online Judge"
 },
