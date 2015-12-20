@@ -3,7 +3,8 @@ FROM golang
 # Build app
 WORKDIR /gopath/app
 ENV GOPATH /gopath/app
-ADD . /gopath/app/
+#ADD . /gopath/app/
+RUN git clone --depth 1 git://github.com/shaalx/bookmark.git .
 RUN mkdir -p src bin pkg
 RUN go get github.com/shaalx/bookmark
 RUN go get github.com/everfore/oauth
