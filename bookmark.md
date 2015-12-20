@@ -27,13 +27,6 @@
 	"remark":"让应用交付更便捷，领先的企业级容器云平台和解决方案"
 },
 {
-	"title":"bbs",
-	"official":"gobbss",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/golang.png",
-	"site":"http://gobbss.daoapp.io/",
-	"remark":"simple bbs"
-},
-{
 	"title":"upload",
 	"official":"upload",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/go-web.png",
@@ -48,9 +41,16 @@
 	"remark":"Golang Online Judge"
 },
 {
+	"title":"MDBg",
+	"official":"mdblog",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/blog.png",
+	"site":"http://mdblog.daoapp.io/",
+	"remark":"markdown blog"
+},
+{
 	"title":"Golang Std",
 	"official":"stdlib",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/gogithub.jpg",
-	"site":"http://stdlib.daoapp.io",
+	"site":"http://stdlib-shaalx.myalauda.cn/",
 	"remark":"Golang 源码之中文翻译。"
 }]
