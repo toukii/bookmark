@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+	"github.com/everfore/exc"
 	. "github.com/everfore/oauth/oauth2"
 	"github.com/shaalx/leetcode/lfu2"
 	"html/template"
@@ -11,6 +12,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -24,21 +26,22 @@ type Bookmark struct {
 }
 
 var (
-	t      *template.Template
-	hacker *template.Template
-	v      []*Bookmark
-	rmv    []*Bookmark
-	update chan bool
-	cache  *lfu2.LFUCache
-	OA     *OAGithub
+	t       *template.Template
+	hacker  *template.Template
+	v       []*Bookmark
+	rmv     []*Bookmark
+	update  chan bool
+	cache   *lfu2.LFUCache
+	OA      *OAGithub
+	command *exc.CMD
 )
 
 func init() {
 	update = make(chan bool, 10)
 	hacker, _ = template.New("hacker.html").ParseFiles("hacker.html")
 	t, _ = template.New("bookmark.html").ParseFiles("bookmark.html")
-	// b := readFile("bookmark.md")
-	b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
+	b := readFile("bookmark.md")
+	// b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
 	v = unmarshal(b)
 	cache = lfu2.NewLFUCache(len(v) / 2)
 	for i := len(v) - 1; i >= 0; i-- {
@@ -46,6 +49,7 @@ func init() {
 	}
 	update <- true
 	OA = NewOAGithub("8ba2991113e68b4805c1", "b551e8a640d53904d82f95ae0d84915ba4dc0571", "user", "http://bookmark.daoapp.io/callback")
+	command = exc.NewCMD("go version").Debug()
 }
 
 func main() {
@@ -57,6 +61,7 @@ func main() {
 	http.HandleFunc("/lfu", lfu)
 	http.HandleFunc("/signin", signin)
 	http.HandleFunc("/callback", callback)
+	http.HandleFunc("/webhook", webhook)
 	http.HandleFunc("/up", up)
 	http.HandleFunc("/down", down)
 	http.ListenAndServe(":80", nil)
@@ -163,7 +168,8 @@ func down(rw http.ResponseWriter, req *http.Request) {
 }
 
 func updateMD(rw http.ResponseWriter, req *http.Request) {
-	b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
+	// b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
+	b := readFile("bookmark.md")
 	v = unmarshal(b)
 	for i := len(v) - 1; i >= 0; i-- {
 		// cur := cache.Attach(v[i].Title)
@@ -196,4 +202,15 @@ func callback(rw http.ResponseWriter, req *http.Request) {
 	} else {
 		rw.Write([]byte(err.Error()))
 	}
+}
+
+func webhook(rw http.ResponseWriter, req *http.Request) {
+	usa := req.UserAgent()
+	if !strings.Contains(usa, "GitHub-Hookshot/") {
+		fmt.Println("CSRF Attack!")
+		http.Redirect(rw, req, "/", 302)
+		return
+	}
+	command.Reset("git pull origin master").Execute()
+	updateMD(rw, req)
 }
