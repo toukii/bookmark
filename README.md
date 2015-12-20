@@ -6,7 +6,7 @@ Least frequently use bookmarks
 
 ##	Bookmarks
 
-[LFU](https://github.com/shaalx/leetcode)
+[LFU](https://github.com/shaalx/leetcode/tree/master/lfu2)
 
 [GoOJ](http://gooj-shaalx.myalauda.cn/)
 
