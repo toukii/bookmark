@@ -36,21 +36,21 @@
 {
 	"title":"GoOJ",
 	"official":"goojle",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/fish.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/golang.png",
 	"site":"http://goojle.daoapp.io/",
 	"remark":"Golang Online Judge"
 },
 {
 	"title":"MDBg",
 	"official":"mdblog",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/blog.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/fish.png",
 	"site":"http://mdblog.daoapp.io/",
 	"remark":"markdown blog"
 },
 {
 	"title":"Golang Std",
 	"official":"stdlib",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/gogithub.jpg",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/golang.png",
 	"site":"http://stdlib-shaalx.myalauda.cn/",
 	"remark":"Golang 源码之中文翻译。"
 }]
