@@ -206,12 +206,12 @@ func callback(rw http.ResponseWriter, req *http.Request) {
 
 func webhook(rw http.ResponseWriter, req *http.Request) {
 	usa := req.UserAgent()
+	fmt.Println(usa)
 	if !strings.Contains(usa, "GitHub-Hookshot/") {
 		fmt.Println("CSRF Attack!")
 		http.Redirect(rw, req, "/", 302)
 		return
 	}
-	fmt.Println(usa)
 	command.Reset("git pull origin master:master").Execute()
 	updateMD(rw, req)
 }
