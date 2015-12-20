@@ -8,7 +8,7 @@ Least frequently use bookmarks
 
 [LFU](https://github.com/shaalx/leetcode)
 
-[GoOJ](http://goojle.daoapp.io)
+[GoOJ](http://gooj-shaalx.myalauda.cn/)
 
 ##	Bug
 
