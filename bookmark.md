@@ -43,7 +43,7 @@
 {
 	"title":"MDBg",
 	"official":"mdblog",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/fish.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/bfish.png",
 	"site":"http://mdblog.daoapp.io/",
 	"remark":"markdown blog"
 },
