@@ -211,6 +211,6 @@ func webhook(rw http.ResponseWriter, req *http.Request) {
 		http.Redirect(rw, req, "/", 302)
 		return
 	}
-	command.Reset("git pull origin master").Execute()
+	command.Reset("git pull origin master:master").Execute()
 	updateMD(rw, req)
 }
