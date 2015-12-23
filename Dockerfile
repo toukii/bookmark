@@ -2,7 +2,6 @@ FROM golang
 
 # Build app
 RUN mkdir -p /gopath/app/bk
-COPY . /gopath/app/bk
 ENV GOPATH /gopath/app
 WORKDIR /gopath/app/bk
 
