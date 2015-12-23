@@ -1,14 +1,15 @@
 FROM golang
 
 # Build app
-WORKDIR /gopath/app
+RUN mkdir -p /gopath/app/bk
+COPY . /gopath/app/bk
 ENV GOPATH /gopath/app
-#ADD . /gopath/app/
+WORKDIR /gopath/app/bk
+
 RUN git clone --depth 1 git://github.com/shaalx/bookmark.git .
-RUN mkdir -p src bin pkg
 RUN go get github.com/shaalx/bookmark
-RUN go get github.com/everfore/oauth
-RUN go get github.com/shaalx/leetcode/lfu2
 RUN go build -o bookmark
+
 EXPOSE 80
-CMD ["/gopath/app/bookmark"]
+
+CMD ["/gopath/app/bk/bookmark"]
