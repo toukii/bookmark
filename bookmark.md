@@ -20,13 +20,6 @@
 	"remark":"搜狗搜索"
 },
 {
-	"title":"牛客网",
-	"official":"牛客",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/nowcoder.png",
-	"site":"http://www.nowcoder.com/",
-	"remark":"牛客网，最大IT笔试面试题库"
-},
-{
 	"title":"道客云",
 	"official":"DaoCloud",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/daocloud.png",
