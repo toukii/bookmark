@@ -13,6 +13,13 @@
 	"remark":"代码库，酷酷酷"
 },
 {
+	"title":"Sogou",
+	"official":"sogou",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/sogou.png",
+	"site":"https://sogou.com/",
+	"remark":"搜狗搜索"
+},
+{
 	"title":"牛客网",
 	"official":"牛客",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/nowcoder.png",
