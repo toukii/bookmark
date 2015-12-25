@@ -1,14 +1,9 @@
-FROM golang
+FROM busybox:latest
 
 # Build app
-RUN mkdir -p /usr/static/app/bk
-ENV GOPATH /usr/static/app
-WORKDIR /usr/static/app/bk
-
-RUN git clone --depth 1 git://github.com/shaalx/bookmark.git .
-RUN go get github.com/shaalx/bookmark
-RUN go build -o bookmark
+RUN mkdir -p /usr/static/app
+ADD . /usr/static/app/
 
 EXPOSE 80
 
-CMD ["/usr/static/app/bk/bookmark"]
+CMD ["/usr/static/app/bookmark"]
