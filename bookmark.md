@@ -55,6 +55,20 @@
 	"remark":"markdown blog"
 },
 {
+	"title":"markdown",
+	"official":"markdown",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/bfish.png",
+	"site":"http://182.254.132.59/",
+	"remark":"markdown editor"
+},
+{
+	"title":"gooj",
+	"official":"GoOJ",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/go.png",
+	"site":"http://115.159.84.253:8008/",
+	"remark":"markdown editor"
+},
+{
 	"title":"Golang Std",
 	"official":"stdlib",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/golang.png",
