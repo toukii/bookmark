@@ -169,7 +169,8 @@ func down(rw http.ResponseWriter, req *http.Request) {
 
 func updateMD(rw http.ResponseWriter, req *http.Request) {
 	// b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
-	b := readFile("bookmark.md")
+	b := get("https://raw.githubusercontent.com/shaalx/bookmark/master/bookmark.md")
+	// b := readFile("bookmark.md")
 	v = unmarshal(b)
 	for i := len(v) - 1; i >= 0; i-- {
 		// cur := cache.Attach(v[i].Title)
