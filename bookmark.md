@@ -69,6 +69,13 @@
 	"remark":"markdown editor"
 },
 {
+	"title":"WIDE",
+	"official":"wide editor for golang",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/go.png",
+	"site":"http://115.159.84.253:7070/login",
+	"remark":"go editor"
+},
+{
 	"title":"Golang Std",
 	"official":"stdlib",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/golang.png",
