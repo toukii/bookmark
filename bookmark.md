@@ -71,7 +71,7 @@
 {
 	"title":"WIDE",
 	"official":"wide editor for golang",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/wide.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/Wide.png",
 	"site":"http://115.159.84.253:7070/login",
 	"remark":"go editor @qcloud #115.159.84.253:7070"
 },
