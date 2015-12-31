@@ -43,7 +43,7 @@
 {
 	"title":"GoOJ",
 	"official":"goojle",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/OJ.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
 	"site":"http://goojle.daoapp.io/",
 	"remark":"Golang Online Judge"
 },
@@ -64,7 +64,7 @@
 {
 	"title":"gooj",
 	"official":"GoOJ",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/OJ.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
 	"site":"http://115.159.84.253:8008/",
 	"remark":"gooj @qcloud #115.159.84.253:8008"
 },
