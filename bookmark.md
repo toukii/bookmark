@@ -76,13 +76,6 @@
 	"remark":"go editor @qcloud #115.159.84.253:7070"
 },
 {
-	"title":"蜂巢",
-	"official":"cloud@163",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/c163.png",
-	"site":"https://c.163.com/",
-	"remark":"网易蜂巢CaaS"
-},
-{
 	"title":"Golang Std",
 	"official":"stdlib",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/golang.png",
