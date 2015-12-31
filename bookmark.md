@@ -57,7 +57,7 @@
 {
 	"title":"markdown",
 	"official":"markdown",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/markdown.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/markdown.jpg",
 	"site":"http://182.254.132.59/",
 	"remark":"markdown editor @qcloud #182.254.132.59"
 },
