@@ -42,10 +42,17 @@
 },
 {
 	"title":"GoOJ",
-	"official":"goojle",
+	"official":"daocloud",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
 	"site":"http://goojle.daoapp.io/",
-	"remark":"Golang Online Judge"
+	"remark":"Golang Online Judge @daocloud"
+},
+{
+	"title":"GoOJ",
+	"official":"alauda",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
+	"site":"http://gooj-shaalx.myalauda.cn/",
+	"remark":"Golang Online Judge @alauda"
 },
 {
 	"title":"MDBg",
