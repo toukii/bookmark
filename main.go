@@ -29,20 +29,22 @@ type Bookmark struct {
 }
 
 var (
-	t       *template.Template
-	hacker  *template.Template
-	v       []*Bookmark
-	rmv     []*Bookmark
-	update  chan bool
-	cache   *lfu2.LFUCache
-	OA      *OAGithub
-	command *exc.CMD
+	t                 *template.Template
+	hacker            *template.Template
+	markdown_edit_tpl *template.Template
+	v                 []*Bookmark
+	rmv               []*Bookmark
+	update            chan bool
+	cache             *lfu2.LFUCache
+	OA                *OAGithub
+	command           *exc.CMD
 )
 
 func init() {
 	update = make(chan bool, 10)
 	hacker, _ = template.New("hacker.html").ParseFiles("hacker.html")
 	t, _ = template.New("bookmark.html").ParseFiles("bookmark.html")
+	markdown_edit_tpl, _ = template.New("markdown_edit.html").ParseFiles("markdown_edit.html")
 	b := readFile("bookmark.md")
 	// b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
 	v = unmarshal(b)
@@ -315,12 +317,7 @@ func Json(data interface{}) []byte {
 }
 
 func markdown_edit(rw http.ResponseWriter, req *http.Request) {
-	tpl, err := template.New("markdown_edit.html").ParseFiles("markdown_edit.html")
-	if goutils.CheckErr(err) {
-		rw.Write(goutils.ToByte(err.Error()))
-		return
-	}
-	tpl.Execute(rw, nil)
+	markdown_edit_tpl.Execute(rw, nil)
 }
 
 /*  markdown --end */

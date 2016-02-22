@@ -41,14 +41,14 @@
 	"remark":"simple upload"
 },
 {
-	"title":"GoOJ",
+	"title":"GoOJ_daocloud",
 	"official":"DaoCloud",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
 	"site":"http://goojle.daoapp.io/",
 	"remark":"Golang Online Judge"
 },
 {
-	"title":"GoOJ",
+	"title":"GoOJ_alauda",
 	"official":"Alauda",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
 	"site":"http://gooj-shaalx.myalauda.cn/",
