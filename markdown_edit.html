@@ -47,12 +47,12 @@
 		$("#markdownContent").html(data.mddata);
 	}
 	function rpcmd () {
-		$.getJSON("http://localhost/markdownCB?callback=?",{"rawContent":$("#rawContent").val()},function (data){
+		$.getJSON("http://127.0.0.1/markdownCB?callback=?",{"rawContent":$("#rawContent").val()},function (data){
 	        console.log(" is a a" + data.mddata);
 	    });
 		/*$.ajax({  
 	        type : "get",  
-	        url : "http://localhost/markdownCB?callback=?",
+	        url : "http://127.0.0.1/markdownCB?callback=?",
 	        dataType:"jsonp",
         	jsonpCallback:"CallbackFunc",
         	data:{"rawContent":$("#rawContent").val()},
@@ -66,7 +66,7 @@
 	        }
 	    });*/
 		/*$.ajax({
-		 // url: 'http://localhost/markdown',
+		 // url: 'http://127.0.0.1/markdown',
 		 url: 'markdown',
 		 type: 'POST',
 		 data:{"rawContent":$("#rawContent").val()},
