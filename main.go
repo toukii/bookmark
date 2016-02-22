@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"github.com/everfore/exc"
 	. "github.com/everfore/oauth/oauth2"
-	"github.com/everfore/rpcsv"
 	"github.com/shaalx/leetcode/lfu2"
 	"html/template"
 	"io/ioutil"
@@ -51,7 +50,6 @@ func init() {
 	update <- true
 	OA = NewOAGithub("8ba2991113e68b4805c1", "b551e8a640d53904d82f95ae0d84915ba4dc0571", "user", "http://bookmark.daoapp.io/callback")
 	command = exc.NewCMD("go version").Debug()
-	rpcsv.RPCServe("8800")
 }
 
 func main() {
