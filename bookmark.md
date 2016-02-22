@@ -55,27 +55,6 @@
 	"remark":"markdown blog"
 },
 {
-	"title":"markdown",
-	"official":"markdown",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/markdown.jpg",
-	"site":"http://182.254.132.59/",
-	"remark":"markdown editor @qcloud #182.254.132.59"
-},
-{
-	"title":"gooj",
-	"official":"GoOJ",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
-	"site":"http://115.159.84.253:8008/",
-	"remark":"gooj @qcloud #115.159.84.253:8008"
-},
-{
-	"title":"WIDE",
-	"official":"wide editor for golang",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/Wide.png",
-	"site":"http://115.159.84.253:7070/login",
-	"remark":"go editor @qcloud #115.159.84.253:7070"
-},
-{
 	"title":"Golang Std",
 	"official":"stdlib",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/golang.png",
