@@ -59,7 +59,6 @@ func main() {
 	go updateBookmarks(time.Second)
 	go flushBookmarks(time.Hour * 24 * 30)
 	http.HandleFunc("/", bookmark)
-	http.HandleFunc("/mdedit", markdown_edit)
 	http.HandleFunc("/update", updateMD)
 	http.HandleFunc("/hacker", hackerHandler)
 	http.HandleFunc("/lfu", lfu)
@@ -69,6 +68,7 @@ func main() {
 	http.HandleFunc("/up", up)
 	http.HandleFunc("/down", down)
 
+	http.HandleFunc("/markdown_edit", markdown_edit)
 	http.HandleFunc("/markdown", markdown)
 	http.HandleFunc("/markdownCB", markdownCB)
 
