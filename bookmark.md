@@ -52,7 +52,7 @@
 	"official":"Alauda",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
 	"site":"http://gooj-shaalx.myalauda.cn/",
-	"remark":"Golang Online Judge @alauda"
+	"remark":"Golang Online Judge"
 },
 {
 	"title":"MDBg",
