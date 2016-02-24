@@ -230,11 +230,12 @@ func webhook(rw http.ResponseWriter, req *http.Request) {
 /*  markdown --start */
 
 var (
-	RPC_Client *rpc.Client
+	RPC_Client     *rpc.Client
+	rpc_tcp_server = "tcphub.t0.daoapp.io:61142"
 )
 
 func connect() {
-	RPC_Client = rpcsv.RPCClient("rpcsvr.t0.daoapp.io:61237")
+	RPC_Client = rpcsv.RPCClient(rpc_tcp_server)
 	go func() {
 		time.Sleep(2e9)
 		RPC_Client.Close()
@@ -248,7 +249,7 @@ func markdown(rw http.ResponseWriter, req *http.Request) {
 	// fmt.Println(rawContent)
 	out := make([]byte, 0, 100)
 	in := goutils.ToByte(rawContent)
-	RPC_Client = rpcsv.RPCClient("rpcsvr.t0.daoapp.io:61237")
+	RPC_Client = rpcsv.RPCClient(rpc_tcp_server)
 	err := rpcsv.Markdown(RPC_Client, &in, &out)
 	if goutils.CheckErr(err) {
 		rw.Write(goutils.ToByte(err.Error()))
@@ -288,7 +289,7 @@ func markdownCB(rw http.ResponseWriter, req *http.Request) {
 	// fmt.Println(rawContent)
 	out := make([]byte, 0, 100)
 	in := goutils.ToByte(rawContent)
-	RPC_Client = rpcsv.RPCClient("rpcsvr.t0.daoapp.io:61237")
+	RPC_Client = rpcsv.RPCClient(rpc_tcp_server)
 	err := rpcsv.Markdown(RPC_Client, &in, &out)
 	if goutils.CheckErr(err) {
 		rw.Write(goutils.ToByte(err.Error()))
