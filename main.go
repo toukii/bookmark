@@ -82,7 +82,7 @@ func readFile(name string) []byte {
 	defer f.Close()
 	rd := bufio.NewReader(f)
 	b, _ := ioutil.ReadAll(rd)
-	fmt.Println(string(b))
+	// fmt.Println(string(b))
 	return b
 }
 
@@ -179,14 +179,33 @@ func down(rw http.ResponseWriter, req *http.Request) {
 
 func updateMD(rw http.ResponseWriter, req *http.Request) {
 	// b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
-	b := get("https://raw.githubusercontent.com/shaalx/bookmark/master/bookmark.md")
-	// b := readFile("bookmark.md")
+	// b := get("https://raw.githubusercontent.com/shaalx/bookmark/master/bookmark.md")
+	b := readFile("bookmark.md")
 	v = unmarshal(b)
+	allVals := make(map[string]int)
+	for _, it := range cache.Vals() {
+		allVals[it.Key] = 0
+	}
+	for _, it := range cache.RmVals() {
+		allVals[it.Key] = 0
+	}
 	for i := len(v) - 1; i >= 0; i-- {
 		// cur := cache.Attach(v[i].Title)
 		// cur.N -= 1
 		// cache.Set(v[i].Title, v[i])
-		cache.WhistPut(v[i].Title, v[i])
+		if _, exist := allVals[v[i].Title]; exist {
+			cache.WhistPut(v[i].Title, v[i])
+		} else {
+			cache.Set(v[i].Title, v[i])
+			fmt.Println("*****************IN******************", v[i].Title, v[i])
+		}
+		allVals[v[i].Title] = 1
+	}
+	for k, v := range allVals {
+		if v <= 0 {
+			cache.Remove(k)
+			fmt.Println("rm ", k)
+		}
 	}
 	update <- true
 	http.Redirect(rw, req, "/", 302)
