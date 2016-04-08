@@ -36,7 +36,7 @@
 {
 	"title":"GoOJ_daocloud",
 	"official":"DaoCloud",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/goojle.png",
 	"site":"http://goojle.daoapp.io/",
 	"remark":"Golang Online Judge"
 },
