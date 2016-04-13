@@ -1,9 +1,9 @@
 [{
-	"title":"百度一下",
-	"official":"百度",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/baidu.png",
-	"site":"https://www.baidu.com",
-	"remark":"百度一下，你就知道。"
+	"title":"gogsdao",
+	"official":"gogs",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GO.png",
+	"site":"https://gogsdao.daoapp.io",
+	"remark":"gogs,git repo"
 },
 {
 	"title":"Github shaalx",
