@@ -51,6 +51,6 @@
 	"title":"Golang Std",
 	"official":"stdlib",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/golang.png",
-	"site":"http://stdlib-shaalx.myalauda.cn/",
+	"site":"http://stdlib.daoapp.io",
 	"remark":"Golang 源码之中文翻译。"
 }]
