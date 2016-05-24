@@ -29,7 +29,7 @@
 {
 	"title":"upload",
 	"official":"upload",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/go-web.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
 	"site":"http://upload.daoapp.io/",
 	"remark":"simple upload"
 },
@@ -43,7 +43,7 @@
 {
 	"title":"MDBg",
 	"official":"mdblog",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/bfish.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GoOJ.png",
 	"site":"http://mdblog.daoapp.io/",
 	"remark":"markdown blog"
 },
