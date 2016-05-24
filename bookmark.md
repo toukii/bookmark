@@ -1,7 +1,7 @@
 [{
 	"title":"gogsdao",
 	"official":"gogs",
-	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/GO.png",
+	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/gogs.png",
 	"site":"https://gogsdao.daoapp.io",
 	"remark":"gogs,git repo"
 },
