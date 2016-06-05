@@ -59,7 +59,7 @@ func init() {
 
 func main() {
 	go updateBookmarks(time.Second)
-	go flushBookmarks(time.Hour * 24 * 30)
+	// go flushBookmarks(time.Hour * 24 * 30)
 	http.HandleFunc("/", bookmark)
 	http.HandleFunc("/update", updateMD)
 	http.HandleFunc("/hacker", hackerHandler)
