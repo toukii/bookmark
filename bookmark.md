@@ -6,10 +6,10 @@
 	"remark":"gogs,git repo"
 },
 {
-	"title":"Github shaalx",
+	"title":"Github toukii",
 	"official":"github",
 	"bgpic":"http://7xku3c.com1.z0.glb.clouddn.com/github.jpg",
-	"site":"https://github.com/shaalx",
+	"site":"https://github.com/toukii",
 	"remark":"代码库，酷酷酷"
 },
 {

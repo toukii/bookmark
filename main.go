@@ -7,8 +7,8 @@ import (
 	"github.com/everfore/exc"
 	. "github.com/everfore/oauth/oauth2"
 	"github.com/everfore/rpcsv"
-	"github.com/shaalx/goutils"
-	"github.com/shaalx/leetcode/lfu2"
+	"github.com/toukii/goutils"
+	"github.com/toukii/leetcode/lfu2"
 	"html/template"
 	"io/ioutil"
 	"log"
@@ -179,7 +179,7 @@ func down(rw http.ResponseWriter, req *http.Request) {
 
 func updateMD(rw http.ResponseWriter, req *http.Request) {
 	// b := get("http://7xku3c.com1.z0.glb.clouddn.com/bookmark.md")
-	b := get("https://raw.githubusercontent.com/shaalx/bookmark/master/bookmark.md")
+	b := get("https://raw.githubusercontent.com/toukii/bookmark/master/bookmark.md")
 	// b := readFile("bookmark.md")
 	v = unmarshal(b)
 	allVals := make(map[string]int)

@@ -6,7 +6,7 @@ Least frequently use bookmarks
 
 ##	Bookmarks
 
-[LFU](https://github.com/shaalx/leetcode/tree/master/lfu2)
+[LFU](https://github.com/toukii/leetcode/tree/master/lfu2)
 
 [GoOJ](http://goojle.daoapp.io/)
 
@@ -22,7 +22,7 @@ Least frequently use bookmarks
 
 *	solution
 
-	[cache.WhistPut(key, val)](https://github.com/shaalx/leetcode/blob/master/lfu2/lfu.go#L151)
+	[cache.WhistPut(key, val)](https://github.com/toukii/leetcode/blob/master/lfu2/lfu.go#L151)
 
 ##	LICENSE
 
